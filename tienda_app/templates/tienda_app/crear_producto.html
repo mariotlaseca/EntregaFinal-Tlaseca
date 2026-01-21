@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qamar Bisutería - Agregar Producto</title>
+    <link href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap' rel='stylesheet'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #EBDBCE;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #FFFFFF;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #F3D7D4;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(112, 44, 43, 0.05);
+        }
+
+        .nav-left .brand-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #702C2B;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+            display: block;
+        }
+
+        .nav-left .brand-logo:hover {
+            color: #C56869;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .btn-nav {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #702C2B;
+            background: transparent;
+            border: 1.5px solid #702C2B;
+            padding: 0.6rem 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        .btn-nav:hover {
+            background-color: #702C2B;
+            color: #FFFFFF;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 2rem;
+        }
+
+        /* Form Container */
+        .form-container {
+            background-color: #FFFFFF;
+            border: 1px solid #F3D7D4;
+            padding: 3rem;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 8px 20px rgba(112, 44, 43, 0.08);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .form-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #702C2B;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+
+        .form-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: #C56869;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Form Fields */
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .form-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #702C2B;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            color: #702C2B;
+            background-color: #FFFFFF;
+            border: none;
+            border-bottom: 1.5px solid #F3D7D4;
+            transition: all 0.3s;
+            outline: none;
+        }
+
+        .form-control:focus {
+            border-bottom-color: #702C2B;
+        }
+
+        .form-control::placeholder {
+            color: #C56869;
+            opacity: 0.5;
+        }
+
+        /* Error Messages */
+        .errorlist {
+            list-style: none;
+            padding: 0;
+            margin: 0.5rem 0 0 0;
+        }
+
+        .errorlist li {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            color: #DC3545;
+            font-weight: 400;
+        }
+
+        /* Form Actions */
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+
+        .btn-submit {
+            flex: 1;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 1rem;
+            background-color: #702C2B;
+            color: #FFFFFF;
+            border: 2px solid #702C2B;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .btn-submit:hover {
+            background-color: transparent;
+            color: #702C2B;
+        }
+
+        .btn-cancel {
+            flex: 1;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 1rem;
+            background-color: transparent;
+            color: #702C2B;
+            border: 2px solid #702C2B;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .btn-cancel:hover {
+            background-color: #702C2B;
+            color: #FFFFFF;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #000000;
+            color: #FFFFFF;
+            padding: 2rem 3rem;
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-copyright {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .footer-link {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+            letter-spacing: 1px;
+        }
+
+        .footer-link:hover {
+            border-bottom-color: #FFFFFF;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem 1.5rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-right {
+                gap: 0.8rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .btn-nav {
+                padding: 0.5rem 1rem;
+                font-size: 0.75rem;
+            }
+
+            .main-content {
+                padding: 2rem 1rem;
+            }
+
+            .form-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .form-title {
+                font-size: 2rem;
+            }
+
+            .form-actions {
+                flex-direction: column;
+            }
+
+            .footer {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="{% url 'home' %}" class="brand-logo">QAMAR BISUTERÍA</a>
+        </div>
+        <div class="nav-right">
+            <a href="{% url 'mostrar_productos' %}" class="btn-nav">TIENDA</a>
+            <a href="#" class="btn-nav">CARRITO</a>
+            <a href="#" class="btn-nav">NOSOTROS</a>
+            <a href="#" class="btn-nav">PERFIL</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="form-container">
+            <div class="form-header">
+                <h1 class="form-title">NUEVO PRODUCTO</h1>
+                <p class="form-subtitle">Agregar al catálogo</p>
+            </div>
+
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <!-- Nombre -->
+                <div class="form-group">
+                    <label for="id_nombre" class="form-label">Nombre</label>
+                    {{ form.nombre }}
+                    {% if form.nombre.errors %}
+                        <ul class="errorlist">
+                        {% for error in form.nombre.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+
+                <!-- Descripción -->
+                <div class="form-group">
+                    <label for="id_descripcion" class="form-label">Descripción</label>
+                    {{ form.descripcion }}
+                    {% if form.descripcion.errors %}
+                        <ul class="errorlist">
+                        {% for error in form.descripcion.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+
+                <!-- Precio -->
+                <div class="form-group">
+                    <label for="id_precio" class="form-label">Precio</label>
+                    {{ form.precio }}
+                    {% if form.precio.errors %}
+                        <ul class="errorlist">
+                        {% for error in form.precio.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+
+                <!-- Categoría -->
+                <div class="form-group">
+                    <label for="id_categoria" class="form-label">Categoría</label>
+                    {{ form.categoria }}
+                    {% if form.categoria.errors %}
+                        <ul class="errorlist">
+                        {% for error in form.categoria.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+
+                <!-- Botones de acción -->
+                <div class="form-actions">
+                    <button type="submit" class="btn-submit">Guardar Producto</button>
+                    <a href="{% url 'listar_productos' %}" class="btn-cancel">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-copyright">© 2026 Qamar Bisutería. Todos los derechos reservados.</p>
+        <a href="#" class="footer-link">ACERCA DE MÍ</a>
+    </footer>
+</body>
+</html>
