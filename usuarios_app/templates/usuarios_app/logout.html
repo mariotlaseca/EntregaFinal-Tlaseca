@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qamar Bisutería - Home</title>
+    <title>Sesión Cerrada - Qamar Bisutería</title>
     <link href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap' rel='stylesheet'>
     <style>
         * {
@@ -11,7 +11,6 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: #EBDBCE;
@@ -19,7 +18,6 @@
             display: flex;
             flex-direction: column;
         }
-
         /* Navbar */
         .navbar {
             background-color: #FFFFFF;
@@ -33,7 +31,6 @@
             z-index: 1000;
             box-shadow: 0 2px 8px rgba(112, 44, 43, 0.05);
         }
-
         .nav-left .brand-logo {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.5rem;
@@ -44,16 +41,13 @@
             transition: color 0.3s;
             display: block;
         }
-
         .nav-left .brand-logo:hover {
             color: #C56869;
         }
-
         .nav-right {
             display: flex;
             gap: 2rem;
         }
-
         .btn-nav {
             font-family: 'Montserrat', sans-serif;
             font-size: 0.85rem;
@@ -69,84 +63,86 @@
             letter-spacing: 1px;
             display: inline-block;
         }
-
         .btn-nav:hover {
             background-color: #702C2B;
             color: #FFFFFF;
         }
-
-        /* Hero Section */
-        .hero-section {
+        /* Main Content */
+        .main-content {
             flex: 1;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             padding: 4rem 2rem;
+        }
+        /* Logout Container */
+        .logout-container {
+            background-color: #FFFFFF;
+            border: 1px solid #F3D7D4;
+            padding: 4rem 3rem;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 8px 20px rgba(112, 44, 43, 0.08);
             text-align: center;
         }
-
-        .hero-title {
+        .logout-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+        .logout-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 4.5rem;
+            font-size: 2.5rem;
             font-weight: 600;
             color: #702C2B;
             margin-bottom: 1rem;
-            letter-spacing: 3px;
-        }
-
-        .hero-subtitle {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 300;
-            color: #C56869;
-            margin-bottom: 4rem;
             letter-spacing: 2px;
-            text-transform: uppercase;
         }
-
-        /* Auth Buttons */
-        .auth-buttons {
-            display: flex;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .btn-auth {
+        .logout-message {
             font-family: 'Montserrat', sans-serif;
             font-size: 1rem;
+            font-weight: 300;
+            color: #C56869;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+        }
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-action {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
             font-weight: 500;
-            padding: 1.2rem 3rem;
+            padding: 1rem 2.5rem;
             cursor: pointer;
             transition: all 0.3s;
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             display: inline-block;
+            text-align: center;
         }
-
+        .btn-home {
+            background-color: #702C2B;
+            color: #FFFFFF;
+            border: 2px solid #702C2B;
+        }
+        .btn-home:hover {
+            background-color: transparent;
+            color: #702C2B;
+        }
         .btn-login {
-            background-color: #702C2B;
-            color: #FFFFFF;
+            background-color: transparent;
+            color: #702C2B;
             border: 2px solid #702C2B;
         }
-
         .btn-login:hover {
-            background-color: transparent;
-            color: #702C2B;
-        }
-
-        .btn-signup {
-            background-color: transparent;
-            color: #702C2B;
-            border: 2px solid #702C2B;
-        }
-
-        .btn-signup:hover {
             background-color: #702C2B;
             color: #FFFFFF;
         }
-
         /* Footer */
         .footer {
             background-color: #000000;
@@ -157,14 +153,12 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .footer-copyright {
             font-family: 'Montserrat', sans-serif;
             font-size: 0.85rem;
             font-weight: 300;
             letter-spacing: 1px;
         }
-
         .footer-link {
             font-family: 'Montserrat', sans-serif;
             font-size: 0.85rem;
@@ -175,11 +169,9 @@
             transition: border-color 0.3s;
             letter-spacing: 1px;
         }
-
         .footer-link:hover {
             border-bottom-color: #FFFFFF;
         }
-
         /* Responsive */
         @media (max-width: 768px) {
             .navbar {
@@ -187,37 +179,30 @@
                 flex-direction: column;
                 gap: 1rem;
             }
-
             .nav-right {
                 gap: 0.8rem;
                 flex-wrap: wrap;
                 justify-content: center;
             }
-
             .btn-nav {
                 padding: 0.5rem 1rem;
                 font-size: 0.75rem;
             }
-
-            .hero-title {
-                font-size: 3rem;
+            .main-content {
+                padding: 2rem 1rem;
             }
-
-            .hero-subtitle {
-                font-size: 1rem;
+            .logout-container {
+                padding: 3rem 2rem;
             }
-
-            .auth-buttons {
+            .logout-title {
+                font-size: 2rem;
+            }
+            .action-buttons {
                 flex-direction: column;
-                gap: 1rem;
-                width: 100%;
-                max-width: 300px;
             }
-
-            .btn-auth {
+            .btn-action {
                 width: 100%;
             }
-
             .footer {
                 flex-direction: column;
                 gap: 1rem;
@@ -241,14 +226,17 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <main class="hero-section">
-        <h1 class="hero-title">QAMAR BISUTERÍA</h1>
-        <p class="hero-subtitle">Joyeria de acero inoxidable a mayoreo</p>
-        
-        <div class="auth-buttons">
-            <a href="{% url 'login' %}" class="btn-auth btn-login">INICIAR SESIÓN</a>
-            <a href="{% url 'register' %}" class="btn-auth btn-signup">CREAR CUENTA</a>
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="logout-container">
+            <div class="logout-icon">👋</div>
+            <h1 class="logout-title">SESIÓN CERRADA</h1>
+            <p class="logout-message">Has cerrado sesión exitosamente. Esperamos verte pronto de nuevo en Qamar Bisutería.</p>
+            
+            <div class="action-buttons">
+                <a href="{% url 'home' %}" class="btn-action btn-home">IR AL INICIO</a>
+                <a href="{% url 'login' %}" class="btn-action btn-login">INICIAR SESIÓN</a>
+            </div>
         </div>
     </main>
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agregar Producto - Qamar Bisutería</title>
+    <title>Mi Perfil - Qamar Bisutería</title>
     <link href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap' rel='stylesheet'>
     <style>
         * {
@@ -11,7 +11,6 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: #EBDBCE;
@@ -19,7 +18,6 @@
             display: flex;
             flex-direction: column;
         }
-
         /* Navbar */
         .navbar {
             background-color: #FFFFFF;
@@ -33,7 +31,6 @@
             z-index: 1000;
             box-shadow: 0 2px 8px rgba(112, 44, 43, 0.05);
         }
-
         .nav-left .brand-logo {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.5rem;
@@ -44,16 +41,13 @@
             transition: color 0.3s;
             display: block;
         }
-
         .nav-left .brand-logo:hover {
             color: #C56869;
         }
-
         .nav-right {
             display: flex;
             gap: 2rem;
         }
-
         .btn-nav {
             font-family: 'Montserrat', sans-serif;
             font-size: 0.85rem;
@@ -69,181 +63,147 @@
             letter-spacing: 1px;
             display: inline-block;
         }
-
         .btn-nav:hover {
             background-color: #702C2B;
             color: #FFFFFF;
         }
-
         /* Main Content */
         .main-content {
             flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 4rem 2rem;
+            padding: 4rem 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
         }
-
-        /* Form Container */
-        .form-container {
+        /* Profile Container */
+        .profile-container {
             background-color: #FFFFFF;
             border: 1px solid #F3D7D4;
-            padding: 3rem;
-            max-width: 600px;
-            width: 100%;
+            overflow: hidden;
             box-shadow: 0 8px 20px rgba(112, 44, 43, 0.08);
         }
-
-        .form-header {
+        /* Profile Header */
+        .profile-header {
             text-align: center;
-            margin-bottom: 2.5rem;
+            padding: 3rem;
+            background: linear-gradient(135deg, #F3D7D4 0%, #DB9F95 100%);
         }
-
-        .form-title {
+        .avatar-container {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #FFFFFF;
+            box-shadow: 0 4px 15px rgba(112, 44, 43, 0.15);
+            background: linear-gradient(135deg, #702C2B 0%, #C56869 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .avatar-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .avatar-placeholder {
+            font-size: 4rem;
+            color: #FFFFFF;
+        }
+        .profile-name {
             font-family: 'Cormorant Garamond', serif;
             font-size: 2.5rem;
             font-weight: 600;
             color: #702C2B;
             margin-bottom: 0.5rem;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
-
-        .form-subtitle {
+        .profile-username {
             font-family: 'Montserrat', sans-serif;
             font-size: 0.9rem;
-            font-weight: 300;
-            color: #C56869;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        /* Form Fields */
-        .form-group {
-            margin-bottom: 1.8rem;
-        }
-
-        .form-label {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: #702C2B;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 0.8rem;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
-            color: #702C2B;
-            background-color: #FFFFFF;
-            border: none;
-            border-bottom: 1.5px solid #F3D7D4;
-            transition: all 0.3s;
-            outline: none;
-        }
-
-        .form-control:focus {
-            border-bottom-color: #702C2B;
-        }
-
-        .form-control::placeholder {
-            color: #C56869;
-            opacity: 0.5;
-        }
-
-        /* File Input Special Styling */
-        input[type="file"] {
-            padding: 0.5rem 0;
-            border-bottom: 1.5px solid #F3D7D4;
-        }
-
-        input[type="file"]::-webkit-file-upload-button {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 500;
-            background-color: #702C2B;
-            color: #FFFFFF;
-            border: none;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-right: 1rem;
-        }
-
-        input[type="file"]::-webkit-file-upload-button:hover {
-            background-color: #C56869;
-        }
-
-        /* Error Messages */
-        .errorlist {
-            list-style: none;
-            padding: 0;
-            margin: 0.5rem 0 0 0;
-        }
-
-        .errorlist li {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.8rem;
-            color: #DC3545;
             font-weight: 400;
+            color: #C56869;
+            letter-spacing: 1px;
         }
-
-        /* Form Actions */
-        .form-actions {
+        /* Profile Info */
+        .profile-info {
+            padding: 3rem;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        .info-item {
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #F3D7D4;
+        }
+        .info-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #702C2B;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .info-value {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            color: #C56869;
+        }
+        /* Action Buttons */
+        .action-buttons {
             display: flex;
             gap: 1rem;
             margin-top: 2.5rem;
+            padding: 0 3rem 3rem;
         }
-
-        .btn-submit {
+        .btn-edit {
             flex: 1;
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
-            padding: 1rem;
             background-color: #702C2B;
             color: #FFFFFF;
             border: 2px solid #702C2B;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-
-        .btn-submit:hover {
-            background-color: transparent;
-            color: #702C2B;
-        }
-
-        .btn-cancel {
-            flex: 1;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 500;
             padding: 1rem;
-            background-color: transparent;
-            color: #702C2B;
-            border: 2px solid #702C2B;
             cursor: pointer;
             transition: all 0.3s;
+            text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            text-decoration: none;
             text-align: center;
             display: inline-block;
         }
-
-        .btn-cancel:hover {
+        .btn-edit:hover {
+            background-color: transparent;
+            color: #702C2B;
+        }
+        .logout-form {
+            flex: 1;
+            margin: 0;
+        }
+        .btn-logout {
+            width: 100%;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            background-color: transparent;
+            color: #702C2B;
+            border: 2px solid #702C2B;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        .btn-logout:hover {
             background-color: #702C2B;
             color: #FFFFFF;
         }
-
         /* Footer */
         .footer {
             background-color: #000000;
@@ -254,14 +214,12 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .footer-copyright {
             font-family: 'Montserrat', sans-serif;
             font-size: 0.85rem;
             font-weight: 300;
             letter-spacing: 1px;
         }
-
         .footer-link {
             font-family: 'Montserrat', sans-serif;
             font-size: 0.85rem;
@@ -272,11 +230,9 @@
             transition: border-color 0.3s;
             letter-spacing: 1px;
         }
-
         .footer-link:hover {
             border-bottom-color: #FFFFFF;
         }
-
         /* Responsive */
         @media (max-width: 768px) {
             .navbar {
@@ -284,34 +240,29 @@
                 flex-direction: column;
                 gap: 1rem;
             }
-
             .nav-right {
                 gap: 0.8rem;
                 flex-wrap: wrap;
                 justify-content: center;
             }
-
             .btn-nav {
                 padding: 0.5rem 1rem;
                 font-size: 0.75rem;
             }
-
             .main-content {
-                padding: 2rem 1rem;
-            }
-
-            .form-container {
                 padding: 2rem 1.5rem;
             }
-
-            .form-title {
-                font-size: 2rem;
+            .profile-info {
+                padding: 2rem 1.5rem;
             }
-
-            .form-actions {
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .action-buttons {
                 flex-direction: column;
+                padding: 0 1.5rem 2rem;
             }
-
             .footer {
                 flex-direction: column;
                 gap: 1rem;
@@ -337,86 +288,60 @@
 
     <!-- Main Content -->
     <main class="main-content">
-        <div class="form-container">
-            <div class="form-header">
-                <h1 class="form-title">NUEVO PRODUCTO</h1>
-                <p class="form-subtitle">Agregar al catálogo</p>
+        <div class="profile-container">
+            <!-- Profile Header with Avatar -->
+            <div class="profile-header">
+                <div class="avatar-container">
+                    {% if user.avatar %}
+                        <img src="{{ user.avatar.url }}" alt="{{ user.username }}">
+                    {% else %}
+                        <div class="avatar-placeholder">👤</div>
+                    {% endif %}
+                </div>
+                <h1 class="profile-name">{{ user.first_name }} {{ user.last_name }}</h1>
+                <p class="profile-username">@{{ user.username }}</p>
             </div>
 
-            <form method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
+            <!-- Profile Info -->
+            <div class="profile-info">
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Nombre</span>
+                        <span class="info-value">{{ user.first_name|default:"No especificado" }}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Apellido</span>
+                        <span class="info-value">{{ user.last_name|default:"No especificado" }}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Usuario</span>
+                        <span class="info-value">@{{ user.username }}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Correo Electrónico</span>
+                        <span class="info-value">{{ user.email }}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Fecha de Nacimiento</span>
+                        <span class="info-value">{{ user.fecha_de_nacimiento|date:"d/m/Y"|default:"No especificada" }}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Fecha de Registro</span>
+                        <span class="info-value">{{ user.date_joined|date:"d/m/Y" }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <a href="{% url 'profile_edit' %}" class="btn-edit">✏️ EDITAR PERFIL</a>
                 
-                <!-- Imagen -->
-                <div class="form-group">
-                    <label for="id_imagen" class="form-label">Imagen del Producto</label>
-                    {{ form.imagen }}
-                    {% if form.imagen.errors %}
-                        <ul class="errorlist">
-                        {% for error in form.imagen.errors %}
-                            <li>{{ error }}</li>
-                        {% endfor %}
-                        </ul>
-                    {% endif %}
-                </div>
-
-                <!-- Nombre -->
-                <div class="form-group">
-                    <label for="id_nombre" class="form-label">Nombre</label>
-                    {{ form.nombre }}
-                    {% if form.nombre.errors %}
-                        <ul class="errorlist">
-                        {% for error in form.nombre.errors %}
-                            <li>{{ error }}</li>
-                        {% endfor %}
-                        </ul>
-                    {% endif %}
-                </div>
-
-                <!-- Descripción -->
-                <div class="form-group">
-                    <label for="id_descripcion" class="form-label">Descripción</label>
-                    {{ form.descripcion }}
-                    {% if form.descripcion.errors %}
-                        <ul class="errorlist">
-                        {% for error in form.descripcion.errors %}
-                            <li>{{ error }}</li>
-                        {% endfor %}
-                        </ul>
-                    {% endif %}
-                </div>
-
-                <!-- Precio -->
-                <div class="form-group">
-                    <label for="id_precio" class="form-label">Precio</label>
-                    {{ form.precio }}
-                    {% if form.precio.errors %}
-                        <ul class="errorlist">
-                        {% for error in form.precio.errors %}
-                            <li>{{ error }}</li>
-                        {% endfor %}
-                        </ul>
-                    {% endif %}
-                </div>
-
-                <!-- Categoría -->
-                <div class="form-group">
-                    <label for="id_categoria" class="form-label">Categoría</label>
-                    {{ form.categoria }}
-                    {% if form.categoria.errors %}
-                        <ul class="errorlist">
-                        {% for error in form.categoria.errors %}
-                            <li>{{ error }}</li>
-                        {% endfor %}
-                        </ul>
-                    {% endif %}
-                </div>
-
-                <!-- Botones de acción -->
-                <div class="form-actions">
-                    <button type="submit" class="btn-submit">Guardar Producto</button>
-                    <a href="{% url 'listar_productos' %}" class="btn-cancel">Cancelar</a>
-                </div>
-            </form>
+                <!-- Logout Form -->
+                <form method="POST" action="{% url 'logout' %}" class="logout-form">
+                    {% csrf_token %}
+                    <button type="submit" class="btn-logout">CERRAR SESIÓN</button>
+                </form>
+            </div>
         </div>
     </main>
 

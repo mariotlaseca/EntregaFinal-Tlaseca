@@ -7,4 +7,5 @@ urlpatterns = [
     path("mostrar_productos", mostrar_productos, name="mostrar_productos"),
     path("crear_producto", crear_producto, name="crear_producto"),
     path("ver_producto/<int:id>/", ver_producto, name="ver_producto"),
+    path('producto/<int:id>/eliminar/', eliminar_producto, name='eliminar_producto'),
 ]
