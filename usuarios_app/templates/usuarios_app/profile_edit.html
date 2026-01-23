@@ -302,7 +302,7 @@
         <div class="nav-right">
             <a href="{% url 'mostrar_productos' %}" class="btn-nav">TIENDA</a>
             <a href="#" class="btn-nav">CARRITO</a>
-            <a href="#" class="btn-nav">NOSOTROS</a>
+            <a href="{% url 'nosotros' %}" class="btn-nav">NOSOTROS</a>
             <a href="{% url 'profile_detail' %}" class="btn-nav">PERFIL</a>
         </div>
     </nav>
@@ -383,7 +383,7 @@
     <!-- Footer -->
     <footer class="footer">
         <p class="footer-copyright">© 2026 Qamar Bisutería. Todos los derechos reservados.</p>
-        <a href="#" class="footer-link">ACERCA DE MÍ</a>
+        <a href="{% url 'acerca_de_mi' %}" class="footer-link">ACERCA DE MÍ</a>
     </footer>
 </body>
 </html>

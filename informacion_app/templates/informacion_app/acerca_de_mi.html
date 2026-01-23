@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión - Qamar Bisutería</title>
+    <title>Acerca de Mí - Qamar Bisutería</title>
     <link href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap' rel='stylesheet'>
     <style>
         * {
@@ -70,131 +70,106 @@
         /* Main Content */
         .main-content {
             flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 4rem 2rem;
+            padding: 4rem 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
         }
-        /* Form Container */
-        .form-container {
+        /* About Container */
+        .about-container {
             background-color: #FFFFFF;
             border: 1px solid #F3D7D4;
-            padding: 3rem;
-            max-width: 450px;
-            width: 100%;
+            padding: 4rem;
             box-shadow: 0 8px 20px rgba(112, 44, 43, 0.08);
         }
-        .form-header {
+        .about-header {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #F3D7D4;
         }
-        .form-title {
+        .about-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
+            font-size: 3.5rem;
             font-weight: 600;
             color: #702C2B;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             letter-spacing: 2px;
         }
-        .form-subtitle {
+        .about-subtitle {
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 300;
             color: #C56869;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 3rem;
+        }
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #702C2B;
+            margin-bottom: 1.5rem;
             letter-spacing: 1px;
         }
-        /* Form Fields */
-        .form-group {
-            margin-bottom: 1.8rem;
+        .section-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 300;
+            color: #C56869;
+            line-height: 1.8;
+            margin-bottom: 1rem;
         }
-        .form-label {
+        /* Info Box */
+        .info-box {
+            background-color: #F3D7D4;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 4px solid #702C2B;
+        }
+        .info-box-title {
             font-family: 'Montserrat', sans-serif;
             font-size: 0.85rem;
-            font-weight: 500;
+            font-weight: 600;
             color: #702C2B;
             text-transform: uppercase;
             letter-spacing: 1px;
-            display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
-        input {
-            width: 100%;
-            padding: 0.8rem;
+        .info-box-content {
             font-family: 'Montserrat', sans-serif;
             font-size: 0.95rem;
+            font-weight: 400;
             color: #702C2B;
-            background-color: #FFFFFF;
-            border: none;
-            border-bottom: 1.5px solid #F3D7D4;
-            transition: all 0.3s;
-            outline: none;
+            line-height: 1.6;
         }
-        input:focus {
-            border-bottom-color: #702C2B;
+        /* Back Button */
+        .back-section {
+            text-align: center;
+            margin-top: 3rem;
         }
-        /* Error Messages */
-        .errorlist {
-            list-style: none;
-            padding: 0;
-            margin: 0.5rem 0 0 0;
-        }
-        .errorlist li {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.8rem;
-            color: #DC3545;
-            font-weight: 400;
-        }
-        /* Non-field errors */
-        .error-message {
-            background-color: #FFE5E5;
-            border-left: 3px solid #DC3545;
-            padding: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .error-message p {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
-            color: #DC3545;
-            font-weight: 400;
-        }
-        /* Form Actions */
-        .form-actions {
-            margin-top: 2.5rem;
-        }
-        .btn-submit {
-            width: 100%;
+        .btn-back {
             font-family: 'Montserrat', sans-serif;
             font-size: 0.9rem;
             font-weight: 500;
-            padding: 1rem;
-            background-color: #702C2B;
-            color: #FFFFFF;
-            border: 2px solid #702C2B;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-        .btn-submit:hover {
             background-color: transparent;
             color: #702C2B;
-        }
-        .register-link {
-            text-align: center;
-            margin-top: 1.5rem;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
-            color: #C56869;
-        }
-        .register-link a {
-            color: #702C2B;
+            border: 2px solid #702C2B;
+            padding: 1rem 2.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
             text-decoration: none;
-            font-weight: 500;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: inline-block;
         }
-        .register-link a:hover {
-            border-bottom-color: #702C2B;
+        .btn-back:hover {
+            background-color: #702C2B;
+            color: #FFFFFF;
         }
         /* Footer */
         .footer {
@@ -242,13 +217,13 @@
                 font-size: 0.75rem;
             }
             .main-content {
-                padding: 2rem 1rem;
-            }
-            .form-container {
                 padding: 2rem 1.5rem;
             }
-            .form-title {
-                font-size: 2rem;
+            .about-container {
+                padding: 2rem 1.5rem;
+            }
+            .about-title {
+                font-size: 2.5rem;
             }
             .footer {
                 flex-direction: column;
@@ -268,66 +243,68 @@
         <div class="nav-right">
             <a href="{% url 'mostrar_productos' %}" class="btn-nav">TIENDA</a>
             <a href="#" class="btn-nav">CARRITO</a>
-            <a href="{% url 'nosotros' %}" class="btn-nav">NOSOTROS</a>
+            <a href="{% url 'nosotros' %}"class="btn-nav">NOSOTROS</a>
             <a href="{% url 'profile_detail' %}" class="btn-nav">PERFIL</a>
         </div>
     </nav>
 
     <!-- Main Content -->
     <main class="main-content">
-        <div class="form-container">
-            <div class="form-header">
-                <h1 class="form-title">INICIAR SESIÓN</h1>
-                <p class="form-subtitle">Bienvenido de nuevo</p>
+        <div class="about-container">
+            <!-- Header -->
+            <div class="about-header">
+                <h1 class="about-title">ACERCA DE MÍ</h1>
+                <p class="about-subtitle">Creador del Proyecto</p>
             </div>
 
-            <!-- Non-field errors -->
-            {% if form.non_field_errors %}
-            <div class="error-message">
-                {% for error in form.non_field_errors %}
-                    <p>{{ error }}</p>
-                {% endfor %}
+            <!-- Content -->
+            <div class="content-section">
+                <h2 class="section-title">Sobre Este Proyecto</h2>
+                <p class="section-text">
+                    Este proyecto fue desarrollado como parte del curso de Python y Django, 
+                    con el objetivo de crear una plataforma de e-commerce completa para la venta 
+                    de joyería en mayoreo.
+                </p>
+                <p class="section-text">
+                    Acerca de mi, comence este curso con la finalidad de aprender a programar
+                    en Python, ya que, era una habilidad necesaria para seguir creciendo en mi
+                    trabajo como ingeniero mecanico.
+                </p>
             </div>
-            {% endif %}
 
-            <form method="POST">
-                {% csrf_token %}
-                
-                <!-- Username -->
-                <div class="form-group">
-                    <label for="{{ form.username.id_for_label }}" class="form-label">Usuario</label>
-                    {{ form.username }}
-                    {% if form.username.errors %}
-                        <ul class="errorlist">
-                        {% for error in form.username.errors %}
-                            <li>{{ error }}</li>
-                        {% endfor %}
-                        </ul>
-                    {% endif %}
-                </div>
+            <div class="content-section">
+                <h2 class="section-title">Desarrollador</h2>
+                <p class="section-text">
+                    <strong>Nombre:</strong> Mario Joaquín Tlaseca Méndez<br>
+                    <strong>Proyecto:</strong> Entrega Final - Curso Python/Django<br>
+                    <strong>Año:</strong> 2026
+                </p>
+            </div>
 
-                <!-- Password -->
-                <div class="form-group">
-                    <label for="{{ form.password.id_for_label }}" class="form-label">Contraseña</label>
-                    {{ form.password }}
-                    {% if form.password.errors %}
-                        <ul class="errorlist">
-                        {% for error in form.password.errors %}
-                            <li>{{ error }}</li>
-                        {% endfor %}
-                        </ul>
-                    {% endif %}
-                </div>
+            <!-- Info Box -->
+            <div class="info-box">
+                <p class="info-box-title">Tecnologías Utilizadas</p>
+                <p class="info-box-content">
+                    Django 4.2+ • Python 3.13 • SQLite • HTML5 • CSS3 • Pillow • 
+                    Class-Based Views • Function-Based Views • Authentication System
+                </p>
+            </div>
 
-                <!-- Submit Button -->
-                <div class="form-actions">
-                    <button type="submit" class="btn-submit">ENTRAR</button>
-                </div>
-            </form>
+            <div class="content-section">
+                <h2 class="section-title">Características del Proyecto</h2>
+                <p class="section-text">
+                    • Sistema completo de gestión de productos con CRUD<br>
+                    • Autenticación y perfiles de usuario personalizados<br>
+                    • Manejo de imágenes con Pillow<br>
+                    • Búsqueda avanzada de productos<br>
+                    • Diseño responsive inspirado en Massimo Dutti<br>
+                    • Protección de vistas con decoradores y mixins
+                </p>
+            </div>
 
-            <!-- Register Link -->
-            <div class="register-link">
-                ¿No tienes cuenta? <a href="{% url 'register' %}">Regístrate aquí</a>
+            <!-- Back Button -->
+            <div class="back-section">
+                <a href="{% url 'home' %}" class="btn-back">← VOLVER AL INICIO</a>
             </div>
         </div>
     </main>

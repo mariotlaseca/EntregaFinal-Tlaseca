@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión - Qamar Bisutería</title>
+    <title>Nosotros - Qamar Bisutería</title>
     <link href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap' rel='stylesheet'>
     <style>
         * {
@@ -70,131 +70,120 @@
         /* Main Content */
         .main-content {
             flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 4rem 2rem;
+            padding: 4rem 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
         }
-        /* Form Container */
-        .form-container {
+        /* About Container */
+        .about-container {
             background-color: #FFFFFF;
             border: 1px solid #F3D7D4;
-            padding: 3rem;
-            max-width: 450px;
-            width: 100%;
+            padding: 4rem;
             box-shadow: 0 8px 20px rgba(112, 44, 43, 0.08);
         }
-        .form-header {
+        .about-header {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #F3D7D4;
         }
-        .form-title {
+        .about-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
+            font-size: 3.5rem;
             font-weight: 600;
             color: #702C2B;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             letter-spacing: 2px;
         }
-        .form-subtitle {
+        .about-subtitle {
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 300;
             color: #C56869;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 3rem;
+        }
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #702C2B;
+            margin-bottom: 1.5rem;
             letter-spacing: 1px;
         }
-        /* Form Fields */
-        .form-group {
-            margin-bottom: 1.8rem;
-        }
-        .form-label {
+        .section-text {
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 500;
+            font-size: 1rem;
+            font-weight: 300;
+            color: #C56869;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        /* Values Grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .value-card {
+            text-align: center;
+            padding: 2rem;
+            border: 1px solid #F3D7D4;
+            transition: all 0.3s;
+        }
+        .value-card:hover {
+            box-shadow: 0 4px 15px rgba(112, 44, 43, 0.1);
+            transform: translateY(-5px);
+        }
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .value-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
             color: #702C2B;
             text-transform: uppercase;
             letter-spacing: 1px;
-            display: block;
             margin-bottom: 0.5rem;
         }
-        input {
-            width: 100%;
-            padding: 0.8rem;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
-            color: #702C2B;
-            background-color: #FFFFFF;
-            border: none;
-            border-bottom: 1.5px solid #F3D7D4;
-            transition: all 0.3s;
-            outline: none;
-        }
-        input:focus {
-            border-bottom-color: #702C2B;
-        }
-        /* Error Messages */
-        .errorlist {
-            list-style: none;
-            padding: 0;
-            margin: 0.5rem 0 0 0;
-        }
-        .errorlist li {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.8rem;
-            color: #DC3545;
-            font-weight: 400;
-        }
-        /* Non-field errors */
-        .error-message {
-            background-color: #FFE5E5;
-            border-left: 3px solid #DC3545;
-            padding: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .error-message p {
+        .value-description {
             font-family: 'Montserrat', sans-serif;
             font-size: 0.85rem;
-            color: #DC3545;
-            font-weight: 400;
+            font-weight: 300;
+            color: #C56869;
+            line-height: 1.5;
         }
-        /* Form Actions */
-        .form-actions {
-            margin-top: 2.5rem;
+        /* Back Button */
+        .back-section {
+            text-align: center;
+            margin-top: 3rem;
         }
-        .btn-submit {
-            width: 100%;
+        .btn-back {
             font-family: 'Montserrat', sans-serif;
             font-size: 0.9rem;
             font-weight: 500;
-            padding: 1rem;
-            background-color: #702C2B;
-            color: #FFFFFF;
-            border: 2px solid #702C2B;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-        .btn-submit:hover {
             background-color: transparent;
             color: #702C2B;
-        }
-        .register-link {
-            text-align: center;
-            margin-top: 1.5rem;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
-            color: #C56869;
-        }
-        .register-link a {
-            color: #702C2B;
+            border: 2px solid #702C2B;
+            padding: 1rem 2.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
             text-decoration: none;
-            font-weight: 500;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: inline-block;
         }
-        .register-link a:hover {
-            border-bottom-color: #702C2B;
+        .btn-back:hover {
+            background-color: #702C2B;
+            color: #FFFFFF;
         }
         /* Footer */
         .footer {
@@ -242,13 +231,16 @@
                 font-size: 0.75rem;
             }
             .main-content {
-                padding: 2rem 1rem;
-            }
-            .form-container {
                 padding: 2rem 1.5rem;
             }
-            .form-title {
-                font-size: 2rem;
+            .about-container {
+                padding: 2rem 1.5rem;
+            }
+            .about-title {
+                font-size: 2.5rem;
+            }
+            .values-grid {
+                grid-template-columns: 1fr;
             }
             .footer {
                 flex-direction: column;
@@ -275,59 +267,68 @@
 
     <!-- Main Content -->
     <main class="main-content">
-        <div class="form-container">
-            <div class="form-header">
-                <h1 class="form-title">INICIAR SESIÓN</h1>
-                <p class="form-subtitle">Bienvenido de nuevo</p>
+        <div class="about-container">
+            <!-- Header -->
+            <div class="about-header">
+                <h1 class="about-title">NOSOTROS</h1>
+                <p class="about-subtitle">Qamar Bisutería</p>
             </div>
 
-            <!-- Non-field errors -->
-            {% if form.non_field_errors %}
-            <div class="error-message">
-                {% for error in form.non_field_errors %}
-                    <p>{{ error }}</p>
-                {% endfor %}
+            <!-- Mission Section -->
+            <div class="content-section">
+                <h2 class="section-title">Nuestra Historia</h2>
+                <p class="section-text">
+                    Qamar Bisutería nace de la pasión por la joyería de calidad y el trato afectivo. 
+                    Nos especializamos en ofrecer piezas variadas que combinan con las tendencas actuales. 
+                    Siempre a un precio accesible.
+                </p>
+                <p class="section-text">
+                    Cada pieza de nuestra colección es cuidadosamente seleccionada para garantizar 
+                    la máxima calidad y belleza, brindando a nuestros clientes joyas que perduran 
+                    en el tiempo y las condiciones climaticas.
+                </p>
             </div>
-            {% endif %}
 
-            <form method="POST">
-                {% csrf_token %}
-                
-                <!-- Username -->
-                <div class="form-group">
-                    <label for="{{ form.username.id_for_label }}" class="form-label">Usuario</label>
-                    {{ form.username }}
-                    {% if form.username.errors %}
-                        <ul class="errorlist">
-                        {% for error in form.username.errors %}
-                            <li>{{ error }}</li>
-                        {% endfor %}
-                        </ul>
-                    {% endif %}
+            <!-- Values -->
+            <div class="content-section">
+                <h2 class="section-title">Nuestros Valores</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">💎</div>
+                        <h3 class="value-title">Calidad</h3>
+                        <p class="value-description">Materiales premium y acabados impecables</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">✨</div>
+                        <h3 class="value-title">Elegancia</h3>
+                        <p class="value-description">Diseños sofisticados y atemporales</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🤝</div>
+                        <h3 class="value-title">Confianza</h3>
+                        <p class="value-description">Compromiso con nuestros clientes</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🌟</div>
+                        <h3 class="value-title">Exclusividad</h3>
+                        <p class="value-description">Piezas únicas y especiales</p>
+                    </div>
                 </div>
+            </div>
 
-                <!-- Password -->
-                <div class="form-group">
-                    <label for="{{ form.password.id_for_label }}" class="form-label">Contraseña</label>
-                    {{ form.password }}
-                    {% if form.password.errors %}
-                        <ul class="errorlist">
-                        {% for error in form.password.errors %}
-                            <li>{{ error }}</li>
-                        {% endfor %}
-                        </ul>
-                    {% endif %}
-                </div>
+            <!-- Mission -->
+            <div class="content-section">
+                <h2 class="section-title">Nuestra Misión</h2>
+                <p class="section-text">
+                    Hacer accesible la joyería de alta calidad, ofreciendo piezas excepcionales 
+                    que reflejen el estilo y personalidad de cada cliente. Nos comprometemos a 
+                    brindar una experiencia de compra memorable, desde la selección hasta la entrega.
+                </p>
+            </div>
 
-                <!-- Submit Button -->
-                <div class="form-actions">
-                    <button type="submit" class="btn-submit">ENTRAR</button>
-                </div>
-            </form>
-
-            <!-- Register Link -->
-            <div class="register-link">
-                ¿No tienes cuenta? <a href="{% url 'register' %}">Regístrate aquí</a>
+            <!-- Back Button -->
+            <div class="back-section">
+                <a href="{% url 'home' %}" class="btn-back">← VOLVER AL INICIO</a>
             </div>
         </div>
     </main>
